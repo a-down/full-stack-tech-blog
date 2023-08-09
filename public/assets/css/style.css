@@ -1,0 +1,20 @@
+header {
+  height: 130px;
+  background-color: var(--brand-soft);
+  box-shadow: 0px 4px 4px var(--brand-navy-shadow);
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 600;;
+}
+
+.header-branding {
+  display: flex;
+  gap: 5px;
+}
+
+nav {
+  gap: 25px;
+}
