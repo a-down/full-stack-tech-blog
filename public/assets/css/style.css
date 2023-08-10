@@ -104,3 +104,21 @@ main h1 {
   align-items: center;
 }
 
+@media screen and (max-width: 900px){
+  .card-holder {
+    flex-direction: column;
+  }
+  .card-right {
+    width: 100%;
+    min-height: 50px;
+    border: 1px solid var(--brand-navy);
+    border-top: none;
+    justify-content: flex-start;
+    padding-left: 20px;
+    align-items: center;
+  }
+  .card-right h4 {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
