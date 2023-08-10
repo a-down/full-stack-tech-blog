@@ -69,6 +69,7 @@ main h1 {
 
 .card-left h3 {
   padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .card-left .date-container div, .card-left h3 {
@@ -120,5 +121,28 @@ main h1 {
   .card-right h4 {
     font-size: 16px;
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 800px){
+  header {
+    height: 180px;
+  }
+
+  main {
+    margin-top: 200px;
+  }
+
+  .header-contents {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 160px;
+  }
+
+  nav {
+    width: 258px;
+    margin-right: 0;
+    justify-content: space-between;
   }
 }
