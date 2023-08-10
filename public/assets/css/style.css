@@ -27,6 +27,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   gap: 25px;
+  margin-right: 1.5%;
 }
 
 main {
