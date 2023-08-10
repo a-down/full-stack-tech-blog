@@ -5,7 +5,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +20,7 @@ header {
 .header-branding {
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 
 nav {
@@ -27,7 +28,6 @@ nav {
   justify-content: flex-end;
   align-items: center;
   gap: 25px;
-  margin-right: 1.5%;
 }
 
 main {
@@ -38,10 +38,6 @@ main {
   margin-top: 150px;
   justify-content: center;
   flex-direction: column;
-}
-
-main h1 {
-  width: 70%;
 }
 
 .card-holder {
@@ -122,9 +118,14 @@ main h1 {
     font-size: 16px;
     margin-top: 10px;
   }
+  main, .header-contents {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 700px){
   header {
     height: 180px;
   }
@@ -138,6 +139,12 @@ main h1 {
     justify-content: space-around;
     align-items: center;
     height: 160px;
+  }
+
+  main, .header-contents {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 
   nav {
