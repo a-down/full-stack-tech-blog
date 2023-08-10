@@ -6,6 +6,17 @@ header {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+header,
+.header-contents,
+.header-branding,
+nav,
+main,
+.card-holder,
+.card-left,
+.card-right,
+.date-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,31 +24,30 @@ header {
 
 .header-contents {
   width: 70%;
-  display: flex;
   justify-content: space-between;
 }
 
 .header-branding {
-  display: flex;
   gap: 5px;
-  align-items: center;
+}
+
+h2 {
+  margin-top: 10px;
+  width: 100%;
 }
 
 nav {
-  display: flex;
   justify-content: flex-end;
-  align-items: center;
   gap: 25px;
 }
 
 main {
-  display: flex;
   width: 70%;
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 150px;
-  justify-content: center;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .card-holder {
@@ -45,9 +55,8 @@ main {
   margin-bottom: 20px;
   padding: 0px;
   width: 100%;
-  display: flex;
   justify-content: flex-end;
-  box-shadow: var(--brand-shadow)
+  box-shadow: var(--brand-shadow);
 }
 
 .card-left, .card-right {
@@ -58,9 +67,9 @@ main {
 
 .card-left {
   flex-grow: 1;
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .card-left h3 {
@@ -83,22 +92,16 @@ main {
 
 .date-container {
   margin-bottom: 0;
-}
-
-.date-container {
+  width: 100%;
   border-top: 1px solid var(--brand-navy);
   height: 50px;
-  display: flex;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 .card-right {
   border-left: none;
   width: 292px;
   flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @media screen and (max-width: 900px){
@@ -121,14 +124,13 @@ main {
     border-top: none;
     justify-content: flex-start;
     padding-left: 20px;
-    align-items: center;
   }
 
   .card-right h4 {
     font-size: 16px;
     margin-top: 10px;
   }
-  
+
   main, .header-contents {
     width: 80%;
     margin-left: 10%;
