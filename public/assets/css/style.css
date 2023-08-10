@@ -2,12 +2,19 @@ header {
   height: 130px;
   background-color: var(--brand-soft);
   box-shadow: 0px 4px 4px var(--brand-navy-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h2 {
-  font-size: 32px;
-  line-height: 1;
-  font-weight: 600;;
+.header-contents {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-branding {
@@ -16,5 +23,83 @@ h2 {
 }
 
 nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 25px;
 }
+
+main {
+  display: flex;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 150px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main h1 {
+  width: 70%;
+}
+
+.card-holder {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0px 4px 4px var(--brand-navy-shadow);
+}
+
+.card-left, .card-right {
+  border: 1px solid var(--brand-navy);
+  padding: 0;
+  min-height: 185px;
+}
+
+.card-left {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-left h3 {
+  padding-top: 30px;
+}
+
+.card-left .date-container div, .card-left h3 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.card-left .date-container div, .card-right h4 {
+  color: var(--brand-gray)
+}
+
+.title-container {
+  min-height: 134px;
+}
+
+.date-container {
+  margin-bottom: 0;
+}
+
+.date-container {
+  border-top: 1px solid var(--brand-navy);
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.card-right {
+  border-left: none;
+  width: 292px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

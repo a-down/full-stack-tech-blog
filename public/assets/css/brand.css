@@ -7,6 +7,31 @@
   --brand-navy-shadow: #2f3b6982;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  color: var(--brand-navy)
+h1, h2, h3, h4, h5, h6, p, div {
+  color: var(--brand-navy);
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+div {
+  font-weight: 500;
 }
