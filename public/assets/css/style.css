@@ -102,6 +102,14 @@ main {
 }
 
 @media screen and (max-width: 900px){
+  header {
+    position: static;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
   .card-holder {
     flex-direction: column;
   }
@@ -128,10 +136,6 @@ main {
 @media screen and (max-width: 700px){
   header {
     height: 180px;
-  }
-
-  main {
-    margin-top: 200px;
   }
 
   .header-contents {
