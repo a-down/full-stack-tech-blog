@@ -30,6 +30,7 @@ Comment.init(
       references: {
         model: 'post',
         key: 'id',
+        unique: 'false'
       },
     },
   },
@@ -47,6 +48,7 @@ Comment.init(
     sequelize,
     timestamps: false,
     underscored: true,
+    freezeTableName: true,
     modelName: 'comment',
   }
 );
