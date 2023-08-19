@@ -117,45 +117,6 @@ main {
   flex-shrink: 0;
 }
 
-@media screen and (max-width: 900px){
-  header {
-    position: static;
-  }
-
-  main {
-    margin-top: 20px;
-  }
-
-  .card-holder {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .card-left {
-    width: 100%;
-    border-right: none;
-  }
-
-  .card-right {
-    width: 100%;
-    min-height: 50px;
-    border-top: 1px solid var(--brand-navy);
-    justify-content: flex-start;
-    padding-left: 20px;
-  }
-
-  .card-right h4 {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  main, .header-contents {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-}
-
 .home-card:hover {
   background-color: var(--brand-soft);
 }
@@ -177,8 +138,8 @@ button {
 }
 
 .dashboard-button {
-  width: 90%;
-  height: 70px;
+height: 60px;
+width: 80%;
 }
 
 .dashboard-button:hover {
@@ -212,6 +173,59 @@ form {
   margin-bottom: 20px;
 }
 
+.form-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+@media screen and (max-width: 900px){
+  header {
+    position: static;
+  }
+
+  main {
+    margin-top: 20px;
+  }
+
+  .card-holder {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-left {
+    width: 100%;
+    border-right: none;
+  }
+
+  .card-right {
+    width: 100%;
+    min-height: 50px;
+    border-top: 1px solid var(--brand-navy);
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .dashboard-button {
+    width: 45%;
+    margin: 10px 0 10px 0;
+  }
+
+  .card-right h4 {
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  main, .header-contents {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
 @media screen and (max-width: 700px){
   header {
     height: 180px;
@@ -224,7 +238,8 @@ form {
     height: 160px;
   }
 
-  main, .header-contents {
+  main, 
+  .header-contents {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
@@ -234,5 +249,11 @@ form {
     width: 258px;
     margin-right: 0;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form-wrapper {
+    width: 100%;
   }
 }

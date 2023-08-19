@@ -21,7 +21,7 @@ async function login (e) {
 
     if (response.ok) {
       alert('You are logged in')
-      location.reload()
+      window.location.href = '/dashboard'
     } else {
       console.log(response)
       alert('Something went wrong. Please try again.')
