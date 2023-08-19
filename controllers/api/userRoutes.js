@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
@@ -41,6 +42,7 @@ router.post('/login', async (req, res) => {
 
     // console.log(req.session)
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
