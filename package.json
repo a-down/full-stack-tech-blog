@@ -1,7 +1,8 @@
 {
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "watch": "nodemon server.js",
+    "start": "node server.js",
     "seed": "node seeds/seed.js"
   },
   "dependencies": {

@@ -2,16 +2,19 @@
   {
     "title": "Why I still use Bootstrap in 2023",
     "content": "Bootstrap is still useful in the year 2023. I will admit, the base design is dated and recognizable. Though, there are plenty of add ons that keep Bootstrap current.",
+    "date_created": "Aug 19, 2023",
     "user_id": 1
   },
   {
     "title": "The Ultimate Tech Quiz",
     "content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "date_created": "Aug 17, 2023",
     "user_id": 2
   },
   {
     "title": "Roll 'Em Up",
     "content": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "date_created": "Aug 13, 2023",
     "user_id": 3
   }
 ]
