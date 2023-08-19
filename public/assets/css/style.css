@@ -41,6 +41,18 @@ nav {
   gap: 25px;
 }
 
+.nav-icon {
+  color: var(--brand-navy)
+}
+
+.nav-icon:hover {
+  color: var(--brand-teal)
+}
+
+.nav-icon:active {
+  color: var(--brand-teal-light);
+}
+
 main {
   width: 70%;
   margin-left: 15%;
