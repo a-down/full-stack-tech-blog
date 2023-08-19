@@ -8,6 +8,7 @@ $('#login-link').on('click', () => loginModal.addClass('is-active'))
 $('.modal-close').on('click', () => loginModal.removeClass('is-active'))
 
 
+// login handler
 async function login (e) {
   const username = $('#login-username').val()
   const password = $('#login-password').val()
@@ -38,6 +39,7 @@ $('#login-button').on('click', (e) => {
 })
 
 
+// signup handler
 async function signup (e) {
   const username = $('#signup-username').val()
   const password = $('#signup-password').val()
@@ -64,4 +66,25 @@ async function signup (e) {
 $('#signup-button').on('click', (e) => {
   e.preventDefault()
   signup() 
+})
+
+
+//logout handler
+const logout = async () => {
+  const response = await fetch('/api/users/logout', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    alert('You have been logged out')
+    document.location.replace('/');
+  } else {
+    alert('Failed to log out.');
+  }
+};
+
+$('#logout-link').on('click', (e) => {
+  e.preventDefault()
+  logout()
 })

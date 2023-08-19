@@ -16,7 +16,8 @@ main,
 .card-holder,
 .card-left,
 .card-right,
-.date-container {
+.date-container,
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,7 +158,6 @@ width: 80%;
   color: var(--brand-soft);
   font-size: 16px;
   border: none;
-  border-radius: 5px;
 }
 
 .form-button:hover {
@@ -173,10 +173,17 @@ form {
   margin-bottom: 20px;
 }
 
+.form-container {
+  width: 100%;
+  justify-content: space-between;
+}
+
 .form-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 400px;
+  width: 48%;
+}
+
+.input {
+  border-radius: 0;
 }
 
 @media screen and (max-width: 900px){
@@ -249,10 +256,12 @@ form {
     margin-right: 0;
     justify-content: space-evenly;
   }
-}
 
-@media screen and (max-width: 500px) {
+  .form-container {
+    flex-direction: column;
+  }
   .form-wrapper {
     width: 100%;
   }
 }
+
