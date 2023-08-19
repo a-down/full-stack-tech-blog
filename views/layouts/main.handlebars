@@ -33,9 +33,14 @@
       </div>
 
       <nav>
-        <a href="/"><i class="fa-solid fa-house fa-2xl nav-icon"></i></a>
-        <a href="/dashboard"><i class="fa-solid fa-user fa-2xl nav-icon"></i></a>
-        <i class="fa-solid fa-right-to-bracket fa-2xl nav-icon"></i>
+        <a href="/">Homepage</a>
+        <a href="/dashboard">Dashboard</a>
+        {{#if loggedIn}}
+        <a href="" id="logout-link">Log Out</a>
+        {{/if}}
+        {{#unless loggedIn}}
+        <a href="" id="login-link">Log In</a>
+        {{/unless}}
       </nav>
     </div>
   </header>
