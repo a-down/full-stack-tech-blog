@@ -30,6 +30,10 @@ h3 {
   font-weight: 700;
 }
 
+.title {
+  color: var(--brand-navy);
+}
+
 h4 {
   font-weight: 700;
 }

@@ -189,6 +189,29 @@ button {
   background-color: white;
 }
 
+.form-button {
+  height: 30px;
+  width: 80px;
+  background-color: var(--brand-navy);
+  color: var(--brand-soft);
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-button:hover {
+  background-color: var(--brand-teal);
+}
+
+.form-button:active {
+  border: 1.5px solid var(--brand-navy)
+}
+
+.modal h3,
+form {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 700px){
   header {
     height: 180px;
