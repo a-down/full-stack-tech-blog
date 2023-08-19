@@ -1,10 +1,8 @@
 const card = $('.card-holder')
 const loginModal = $('#login-modal')
 
-card.on('click', () => console.log('clicked'))
 
 $('#login-link').on('click', () => loginModal.addClass('is-active'))
-
 $('.modal-close').on('click', () => loginModal.removeClass('is-active'))
 
 

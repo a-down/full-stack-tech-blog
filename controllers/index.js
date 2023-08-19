@@ -1,37 +1,45 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const withAuth = require('../utils/auth.js')
-const { Post, User } = require('../models')
+const { Post, User, Comment } = require('../models')
 
 
 // API Routes
 router.use('/api', apiRoutes);
 
 
+
+// Blog Post Route
+router.use('/:id', async (req, res) => {
+    console.log(req.params.id)
+    const postData = await Post.findByPk(req.params.id, {include: [{model: User}, {model: Comment}]})
+    console.log(postData)
+    const post = await postData.get({plain: true})
+    console.log(post)
+    
+    res.render('post', post)
+})
+
+
 // Dashboard Route
 router.use('/dashboard', withAuth, async (req, res) => {
-try {
-  let postData = await Post.findAll( {where: {id: req.session.user_id}}, {include: [{model: User}]} )
-  const posts = postData.map((project) => project.get({plain: true}))
-  console.log(posts)
+  try {
+    const postData = await Post.findAll( {where: {user_id: req.session.user_id}}, {include: [{model: User}]} )
+    const posts = postData.map((project) => project.get({plain: true}))
+    console.log(posts)
 
-  res.render('dashboard', {posts, loggedIn: req.session.loggedIn})
+    res.render('dashboard', {posts, loggedIn: req.session.loggedIn})
 
-} catch (err) {
-  res.status(500).json(err)
-  console.log(err)
-}
+  } catch (err) {
+    res.status(500).json(err)
+    console.log(err)
+  }
 });
 
 
 // Login Page Route
-router.get('/login', async (req, res) => res.render('login'))
+router.use('/login', async (req, res) => res.render('login'))
 
-router.get('/profile/:id', async (req, res) => {
-  const user = await User.findByPk(req.params.id, {include: [{model: Project}]} ).catch((err) => res.status(500).json(err))
-  const serialized = user.get({plain: true})
-  res.render('profile', {user: serialized})
-})
 
 
 // All other routes lead to homepage
@@ -40,7 +48,7 @@ router.use('/*', async (req, res) => {
     let postData = await Post.findAll( {include: [{model: User}]} )
     const posts = postData.map((project) => project.get({plain: true}))
     console.log(posts)
-    res.render('homepage', {posts})
+    res.render('homepage', {posts, loggedIn: req.session.loggedIn})
 
   } catch (err) {
     res.status(500).json(err)

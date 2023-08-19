@@ -18,7 +18,8 @@ main,
 .card-right,
 .date-container,
 .form-container,
-.dashboard-header {
+.dashboard-header,
+.homepage-right {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +63,10 @@ main {
   margin-top: 150px;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.card-holder-link {
+  width: 100%;
 }
 
 .card-holder {
@@ -233,8 +238,12 @@ form {
 
   .card-right h4 {
     font-size: 16px;
-    margin-top: 10px;
     padding-left: 20px;
+  }
+
+  .homepage-right {
+    justify-content: flex-start;
+    margin-top: 0;
   }
 
   main, .header-contents {
@@ -271,6 +280,7 @@ form {
   .form-container {
     flex-direction: column;
   }
+
   .form-wrapper {
     width: 100%;
   }
