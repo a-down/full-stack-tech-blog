@@ -9,7 +9,7 @@
   --brand-shadow: 0px 4px 4px var(--brand-navy-shadow);
 }
 
-h1, h2, h3, h4, h5, h6, p, div {
+h1, h2, h3, h4, h5, h6, p, div, button {
   color: var(--brand-navy);
   font-family: 'Inter', sans-serif;
 }

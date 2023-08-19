@@ -1,7 +1,7 @@
-<h1>Homepage</h1>
+<h1>Dashboard</h1>
 {{#each posts}}      
     <!-- BLOG CARD -->
-    <div class="card-holder home-card">
+    <div class="card-holder">
       <div class="card-left">
         <div class="title-container">
           <h3 class="title">{{title}}</h3>
@@ -11,7 +11,8 @@
         </div>
       </div>
       <div class="card-right">
-        <h4>{{user.username}}</h4>
+        <button class="dashboard-button">View Post</button>
+        <button class="dashboard-button">Edit Post</button>
       </div>
     </div>
 {{/each}}
