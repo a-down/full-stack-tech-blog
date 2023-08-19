@@ -16,8 +16,12 @@ router.use('/:id', async (req, res) => {
     console.log(postData)
     const post = await postData.get({plain: true})
     console.log(post)
-    
-    res.render('post', post)
+
+    const commentData = await Comment.findAll({where: {post_id: req.params.id}, include: {model: User}})
+    console.log(commentData)
+    const comments = commentData.map((comment) => comment.get({plain: true}))
+    console.log(comments)
+    res.render('post', {post, commentsData: comments})
 })
 
 

@@ -1,16 +1,18 @@
 [
   {
     "content": "Bootstrap is still irrelevant.",
-    "post_id": 1
-  },
-  {
-    "title": "The Ultimate Tech Quiz",
-    "content": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "post_id": 1,
     "user_id": 2
   },
   {
-    "title": "Roll 'Em Up",
-    "content": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "content": "This was fun!",
+    "post_id": 2,
     "user_id": 3
+  },
+  {
+    "content": "I could've made this in 5 minutes...",
+    "post_id": 3,
+    "user_id": 1
   }
+
 ]

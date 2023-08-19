@@ -1,2 +1,24 @@
-<h2>hello</h2>
-{{title}}
+<div class="blog-post-wrapper">
+  <div class="blog-post-header">
+    <h1>{{post.title}}</h1>
+    <h4>{{post.user.username}}</h4>
+    <h6>{{post.date_created}}</h6>
+  </div>
+
+  <div class="blog-content">
+    <p>{{post.content}}</p>
+  </div>
+
+  <div class="blog-comments">
+    <div class="comments-header">
+      <h3>Comments</h3>
+      <button class="form-button">Add a comment</button>
+    </div>
+    {{#each commentsData}}
+    <div>
+      <h4>{{user.username}} ({{date_created}})</h4>
+      <p>{{content}}</p>
+    {{/each}}
+    </div>
+  </div>
+</div>

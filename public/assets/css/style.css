@@ -202,6 +202,38 @@ form {
   border-radius: 0;
 }
 
+/* BLOG POST PAGE */
+.blog-post-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+
+.comments-header {
+  display: flex;
+  width: 80%;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.blog-content {
+  width: 80%;
+}
+
+.blog-comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-comments button {
+  width: 200px;
+}
+
 @media screen and (max-width: 900px){
   header {
     position: static;
