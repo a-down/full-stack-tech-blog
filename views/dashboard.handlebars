@@ -1,4 +1,8 @@
-<h1>Dashboard</h1>
+<div class="dashboard-header">
+  <h1>Dashboard</h1>
+  <button class="form-button">Create a post!</button>
+</div>
+{{#if posts}}
 {{#each posts}}      
     <!-- BLOG CARD -->
     <div class="card-holder">
@@ -16,3 +20,8 @@
       </div>
     </div>
 {{/each}}
+{{/if}}
+
+{{#unless posts}}
+<p>You have not written any posts yet. Write your first one with "Create a post!".</p>
+{{/unless}}

@@ -11,7 +11,7 @@ router.use('/api', apiRoutes);
 // Dashboard Route
 router.use('/dashboard', withAuth, async (req, res) => {
 try {
-  let postData = await Post.findAll( {include: [{model: User}]} )
+  let postData = await Post.findAll( {where: {id: req.session.user_id}}, {include: [{model: User}]} )
   const posts = postData.map((project) => project.get({plain: true}))
   console.log(posts)
 
