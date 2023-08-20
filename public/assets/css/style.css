@@ -135,7 +135,6 @@ main {
 .card-right {
   flex-direction: column;
   justify-content: space-evenly;
-
 }
 
 button {
@@ -150,7 +149,7 @@ width: 80%;
 }
 
 .dashboard-button:hover {
-  background-color: white;
+  background-color: var(--brand-teal-light);
 }
 
 .dashboard-button:active {

@@ -5,22 +5,20 @@
 {{#if posts}}
 {{#each posts}}      
     <!-- BLOG CARD -->
-    <a href="/post/{{id}}">
-      <div class="card-holder">
-        <div class="card-left">
-          <div class="title-container">
-            <h3 class="title">{{title}}</h3>
-          </div>
-          <div class="date-container">
-            <div>{{date_created}}</div>
-          </div>
+    <div class="card-holder">
+      <div class="card-left">
+        <div class="title-container">
+          <h3 class="title">{{title}}</h3>
         </div>
-        <div class="card-right">
-          <button class="dashboard-button">View Post</button>
-          <button class="dashboard-button">Edit Post</button>
+        <div class="date-container">
+          <div>{{date_created}}</div>
         </div>
       </div>
-    </a>
+      <div class="card-right">
+        <button class="dashboard-button">View Post</button>
+        <button class="dashboard-button">Edit Post</button>
+      </div>
+    </div>
 {{/each}}
 {{/if}}
 
