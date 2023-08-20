@@ -2,28 +2,12 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const withAuth = require('../utils/auth.js')
 const { Post, User, Comment } = require('../models')
-
+const blogRoutes = require('./blogRoutes')
 
 // API Routes
 router.use('/api', apiRoutes);
-
-
-
-// Blog Post Route
-router.use('/:id', async (req, res) => {
-    console.log(req.params.id)
-    const postData = await Post.findByPk(req.params.id, {include: [{model: User}, {model: Comment}]})
-    console.log(postData)
-    const post = await postData.get({plain: true})
-    console.log(post)
-
-    const commentData = await Comment.findAll({where: {post_id: req.params.id}, include: {model: User}})
-    console.log(commentData)
-    const comments = commentData.map((comment) => comment.get({plain: true}))
-    console.log(comments)
-    res.render('post', {post, commentsData: comments})
-})
-
+// router.use('/', homeRoutes)
+router.use('/blog', blogRoutes)
 
 // Dashboard Route
 router.use('/dashboard', withAuth, async (req, res) => {
@@ -43,6 +27,9 @@ router.use('/dashboard', withAuth, async (req, res) => {
 
 // Login Page Route
 router.use('/login', async (req, res) => res.render('login'))
+
+
+
 
 
 
