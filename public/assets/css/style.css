@@ -153,7 +153,15 @@ width: 80%;
 }
 
 .dashboard-button:active {
-  background-color: white;
+  background-color: var(--brand-teal)
+}
+
+.dashboard-delete-button:hover {
+  background-color: lightcoral;
+}
+
+.dashboard-delete-button:active {
+  background-color: rgb(237, 92, 92);
 }
 
 .form-button {
@@ -231,6 +239,15 @@ form {
 
 .blog-comments button {
   width: 200px;
+}
+
+.write-blog-form {
+  width: 100%;
+}
+
+#post-blog-button {
+  height: 50px;
+  width: 300px;
 }
 
 @media screen and (max-width: 900px){

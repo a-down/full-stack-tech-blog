@@ -1,13 +1,16 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
+const viewRoutes = require('./view-routes')
+const writeRoutes = require('./write-routes')
 const withAuth = require('../utils/auth.js')
 const { Post, User, Comment } = require('../models')
-const blogRoutes = require('./blogRoutes')
 
 // API Routes
 router.use('/api', apiRoutes);
-// router.use('/', homeRoutes)
-router.use('/blog', blogRoutes)
+router.use('/view', viewRoutes)
+router.use('/write', writeRoutes)
+
+
 
 // Dashboard Route
 router.use('/dashboard', withAuth, async (req, res) => {
@@ -24,17 +27,11 @@ router.use('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-
 // Login Page Route
 router.use('/login', async (req, res) => res.render('login'))
 
-
-
-
-
-
-// All other routes lead to homepage
-router.use('/*', async (req, res) => {
+// Home route
+router.use('/', async (req, res) => {
   try {
     let postData = await Post.findAll( {include: [{model: User}]} )
     const posts = postData.map((project) => project.get({plain: true}))

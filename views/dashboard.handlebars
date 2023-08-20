@@ -1,24 +1,28 @@
 <div class="dashboard-header">
   <h1>Dashboard</h1>
-  <button class="form-button">Create a post!</button>
+  <a href="/write">
+    <button class="form-button">Create a post!</button>
+  </a>
 </div>
 {{#if posts}}
 {{#each posts}}      
     <!-- BLOG CARD -->
-    <div class="card-holder">
-      <div class="card-left">
-        <div class="title-container">
-          <h3 class="title">{{title}}</h3>
+    <a href="/write/{{id}}" class="card-holder-link">
+      <div class="card-holder">
+        <div class="card-left">
+          <div class="title-container">
+            <h3 class="title">{{title}}</h3>
+          </div>
+          <div class="date-container">
+            <div>{{date_created}}</div>
+          </div>
         </div>
-        <div class="date-container">
-          <div>{{date_created}}</div>
+        <div class="card-right">
+          <button class="dashboard-button">Edit Post</button>
+          <button class="dashboard-button dashboard-delete-button">Delete Post</button>
         </div>
       </div>
-      <div class="card-right">
-        <button class="dashboard-button">View Post</button>
-        <button class="dashboard-button">Edit Post</button>
-      </div>
-    </div>
+    </a>
 {{/each}}
 {{/if}}
 

@@ -86,3 +86,41 @@ $('#logout-link').on('click', (e) => {
   e.preventDefault()
   logout()
 })
+
+
+// post new blog handler
+
+const postBlog = async () => {
+  const userId = $('#hidden-user-id').val()
+  const postTitle = $('#title-input').val()
+  const postContent = $('#body-input').val()
+
+  if (postTitle && postContent) {
+    const response = await fetch('/api/posts', {
+      method: 'POST',
+      body: JSON.stringify({
+        user_id: userId,
+        title: postTitle,
+        content: postContent
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert('Post created')
+      document.location.replace('/dashboard')
+    } else {
+      console.log(response)
+      alert('Failed to create post')
+    }
+  
+  } else {
+    alert('Please fill out both fields')
+    return;
+  }
+} 
+
+$('#post-blog-button').on('click', (e) => {
+  e.preventDefault()
+  postBlog()
+})
