@@ -9,9 +9,13 @@ router.use('/', async (req, res) => res.render('write-post', {userId: req.sessio
 
 // update blog post
 router.use('/:id', async (req, res) => {
-  const postData = await Post.findByPk(req.params.id)
-  const post = postData.get({plain: true})
-  res.render('write-post', {post, userId: req.session.user_id})
+  try {
+    const postData = await Post.findByPk(req.params.id)
+    const post = postData.get({plain: true})
+    res.render('update-post', {post: post, userId: req.session.user_id, postId: req.params.id})
+  } catch (err) {
+    console.log(err)
+  }
 })
 
 module.exports = router;

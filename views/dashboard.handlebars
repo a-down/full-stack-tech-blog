@@ -5,20 +5,20 @@
   </a>
 </div>
 {{#if posts}}
-{{#each posts}}      
+{{#each posts as |post|}}      
     <!-- BLOG CARD -->
-    <a href="/write/{{id}}" class="card-holder-link">
+    <a href="/view/{{post.id}}" class="card-holder-link">
       <div class="card-holder">
         <div class="card-left">
           <div class="title-container">
-            <h3 class="title">{{title}}</h3>
+            <h3 class="title">{{post.title}}</h3>
           </div>
           <div class="date-container">
-            <div>{{date_created}}</div>
+            <div>{{post.date_created}}</div>
           </div>
         </div>
         <div class="card-right">
-          <button class="dashboard-button">Edit Post</button>
+          <button class="dashboard-button dashboard-edit-button">Edit Post</button>
           <button class="dashboard-button dashboard-delete-button">Delete Post</button>
         </div>
       </div>

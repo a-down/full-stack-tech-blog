@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
 
 // POST new blog
 router.post('/', async (req, res) => {
-  console.log(`Request: ${req.body}`)
+  // console.log(`Request: ${req.body}`)
   const newPost = await Post.create(req.body).catch((err) => res.status(500).json(err))
   res.status(200).json({message: 'Post created', newPost})
 })

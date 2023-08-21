@@ -2,14 +2,8 @@ const card = $('.card-holder')
 const loginModal = $('#login-modal')
 
 
-$('#login-link').on('click', () => loginModal.addClass('is-active'))
-$('.modal-close').on('click', () => loginModal.removeClass('is-active'))
-
-
 // login handler
-async function login (e) {
-  const username = $('#login-username').val()
-  const password = $('#login-password').val()
+async function login (username, password, alertMsg) {
 
   if (username && password) {
     const response = await fetch('/api/users/login', {
@@ -19,7 +13,7 @@ async function login (e) {
     })
 
     if (response.ok) {
-      alert('You are logged in')
+      alert(alertMsg)
       window.location.href = '/dashboard'
     } else {
       console.log(response)
@@ -32,15 +26,15 @@ async function login (e) {
 }
 
 $('#login-button').on('click', (e) => {
+  const username = $('#login-username').val()
+  const password = $('#login-password').val()
   e.preventDefault()
-  login() 
+  login(username, password, 'You are logged in') 
 })
 
 
 // signup handler
-async function signup (e) {
-  const username = $('#signup-username').val()
-  const password = $('#signup-password').val()
+async function signup (username, password) {
 
   if (username && password) {
     const response = await fetch('/api/users/', {
@@ -50,8 +44,7 @@ async function signup (e) {
     })
 
     if (response.ok) {
-      alert('Your account is created')
-      location.reload()
+      login(username, password, 'Your account has been created')
     } else {
       alert('Something went wrong. Please try again.')
     }
@@ -62,12 +55,14 @@ async function signup (e) {
 }
 
 $('#signup-button').on('click', (e) => {
+  const username = $('#signup-username').val()
+  const password = $('#signup-password').val()
   e.preventDefault()
-  signup() 
+  signup(username, password) 
 })
 
 
-//logout handler
+// logout handler
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -89,7 +84,6 @@ $('#logout-link').on('click', (e) => {
 
 
 // post new blog handler
-
 const postBlog = async () => {
   const userId = $('#hidden-user-id').val()
   const postTitle = $('#title-input').val()
@@ -98,11 +92,7 @@ const postBlog = async () => {
   if (postTitle && postContent) {
     const response = await fetch('/api/posts', {
       method: 'POST',
-      body: JSON.stringify({
-        user_id: userId,
-        title: postTitle,
-        content: postContent
-      }),
+      body: JSON.stringify({ user_id: userId, title: postTitle, content: postContent }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -123,4 +113,38 @@ const postBlog = async () => {
 $('#post-blog-button').on('click', (e) => {
   e.preventDefault()
   postBlog()
+})
+
+
+// update blog handler
+const updateBlog = async () => {
+  const postId = $('#hiden-post-id').val()
+  const userId = $('#hidden-user-id').val()
+  const postTitle = $('#title-input').val()
+  const postContent = $('#body-input').val()
+
+  if (postTitle && postContent) {
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: 'PUT',
+      body: JSON.stringify({ title: postTitle, content: postContent }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      alert('Post created')
+      document.location.replace('/dashboard')
+    } else {
+      console.log(response)
+      alert('Failed to create post')
+    }
+  
+  } else {
+    alert('Please fill out both fields')
+    return;
+  }
+} 
+
+$('#update-blog-button').on('click', (e) => {
+  e.preventDefault()
+  updateBlog()
 })
