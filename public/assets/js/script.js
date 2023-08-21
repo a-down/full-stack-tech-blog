@@ -71,7 +71,7 @@ const logout = async () => {
 
   if (response.ok) {
     alert('You have been logged out')
-    document.location.replace('/');
+    window.location.href = '/'
   } else {
     alert('Failed to log out.');
   }
@@ -88,17 +88,20 @@ const postBlog = async () => {
   const userId = $('#hidden-user-id').val()
   const postTitle = $('#title-input').val()
   const postContent = $('#body-input').val()
+  console.log(userId, postTitle, postContent)
+  console.log(JSON.stringify({ user_id: userId, title: postTitle, content: postContent }))
+  // { "user_id": userId, "title": postTitle, "content": postContent }
 
   if (postTitle && postContent) {
-    const response = await fetch('/api/posts', {
+    const response = await fetch(`/api/posts/`, {
       method: 'POST',
-      body: JSON.stringify({ user_id: userId, title: postTitle, content: postContent }),
+      body: JSON.stringify({ title: postTitle, content: postContent, user_id: userId }),
       headers: { 'Content-Type': 'application/json' },
     });
 
     if (response.ok) {
       alert('Post created')
-      document.location.replace('/dashboard')
+      window.location.href = '/dashboard'
     } else {
       console.log(response)
       alert('Failed to create post')

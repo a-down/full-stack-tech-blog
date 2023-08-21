@@ -320,6 +320,12 @@ form {
     margin-right: 5%;
   }
 
+  .blog-content,
+  .blog-comments,
+  .comments-header {
+    width: 100%;
+  }
+
   nav {
     margin-right: 0;
     justify-content: space-evenly;
