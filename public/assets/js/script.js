@@ -136,7 +136,7 @@ const updateBlog = async () => {
 
     if (response.ok) {
       alert('Post updated')
-      document.location.replace('/dashboard')
+      window.location.herf = '/dashboard'
     } else {
       console.log(response)
       alert('Failed to update post')
@@ -151,4 +151,35 @@ const updateBlog = async () => {
 $('#update-blog-button').on('click', (e) => {
   e.preventDefault()
   updateBlog()
+})
+
+
+// delete blog handler
+const deleteBlog = async (postId) => {
+  const confirmResponse = confirm('Are you sure you want to delete this post forever?')
+  console.log(confirmResponse)
+
+  if (confirmResponse) {
+    const response = await fetch(`/api/posts/${postId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' }
+    })
+
+    if (response.ok) {
+      alert('Post deleted')
+      window.location.href = '/dashboard'
+    } else {
+      console.log(response)
+      alert('Something went wrong. Please try again.')
+    }
+    
+  } else {
+    return
+  }
+}
+
+
+$('#delete-blog-button').on('click', (e) => {
+  e.preventDefault()
+  deleteBlog( $('#delete-blog-button').val() )
 })

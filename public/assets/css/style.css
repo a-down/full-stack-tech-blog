@@ -256,9 +256,20 @@ form {
 }
 
 #post-blog-button,
-#update-blog-button {
+#update-blog-button,
+#delete-blog-button {
   height: 50px;
   width: 300px;
+}
+
+#delete-blog-button {
+  margin-top: 30px;
+  background-color: lightcoral;
+}
+
+#delete-blog-button:hover {
+  margin-top: 30px;
+  background-color: rgb(237, 104, 104);
 }
 
 @media screen and (max-width: 900px){
