@@ -13,7 +13,7 @@ router.use('/write', writeRoutes)
 
 
 // Dashboard Route
-router.use('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll( {where: {user_id: req.session.user_id}}, {include: [{model: User}]} )
     const posts = postData.map((project) => project.get({plain: true}))
@@ -28,14 +28,14 @@ router.use('/dashboard', withAuth, async (req, res) => {
 });
 
 // Login Page Route
-router.use('/login', async (req, res) => res.render('login'))
+router.get('/login', async (req, res) => res.render('login'))
 
 // Home route
-router.use('/', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     let postData = await Post.findAll( {include: [{model: User}]} )
     const posts = postData.map((project) => project.get({plain: true}))
-    console.log(posts)
+    // console.log(posts)
     res.render('homepage', {posts, loggedIn: req.session.loggedIn})
 
   } catch (err) {

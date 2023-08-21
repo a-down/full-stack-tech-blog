@@ -4,11 +4,11 @@ const { Post, User, Comment } = require('../models')
 
 
 // write new blog
-router.use('/', async (req, res) => res.render('write-post', {userId: req.session.user_id}))
+router.get('/', async (req, res) => res.render('write-post', {userId: req.session.user_id}))
 
 
 // update blog post
-router.use('/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id)
     const post = postData.get({plain: true})
