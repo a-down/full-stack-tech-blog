@@ -121,10 +121,11 @@ $('#post-blog-button').on('click', (e) => {
 
 // update blog handler
 const updateBlog = async () => {
-  const postId = $('#hiden-post-id').val()
+  const postId = $('#hidden-post-id').val()
   const userId = $('#hidden-user-id').val()
   const postTitle = $('#title-input').val()
   const postContent = $('#body-input').val()
+  console.log(postId, postTitle, postContent)
 
   if (postTitle && postContent) {
     const response = await fetch(`/api/posts/${postId}`, {
@@ -134,11 +135,11 @@ const updateBlog = async () => {
     });
 
     if (response.ok) {
-      alert('Post created')
+      alert('Post updated')
       document.location.replace('/dashboard')
     } else {
       console.log(response)
-      alert('Failed to create post')
+      alert('Failed to update post')
     }
   
   } else {
