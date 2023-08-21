@@ -205,12 +205,22 @@ form {
   width: 200px;
 }
 
+.dashboard-link {
+  width: 100%;
+}
+
+.dashboard-view-button {
+  width: 80%;
+  margin: 0 10% 0 10%;
+}
+
 .input {
   border-radius: 0;
 }
 
 /* BLOG POST PAGE */
 .blog-post-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -280,7 +290,7 @@ form {
   }
 
   .dashboard-button {
-    width: 45%;
+    width: 90%;
     margin: 10px 0 10px 0;
   }
 
