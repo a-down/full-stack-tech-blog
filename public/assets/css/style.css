@@ -236,7 +236,8 @@ form {
 
 
 
-.blog-content {
+.blog-content,
+.comment-div {
   width: 80%;
 }
 
@@ -347,7 +348,8 @@ form {
 
   .blog-content,
   .blog-comments,
-  .comments-header {
+  .comments-header,
+  .comment-div {
     width: 100%;
   }
 

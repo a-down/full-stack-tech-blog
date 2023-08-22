@@ -6,7 +6,7 @@
   --brand-soft: #fafaff;
   --brand-gray: #5b4d4d;
   --brand-navy-shadow: #2f3b6982;
-  --brand-shadow: 0px 4px 4px var(--brand-navy-shadow);
+  --brand-shadow: 0px 1px 1px var(--brand-navy-shadow);
 }
 
 h1, h2, h3, h4, h5, h6, p, div, button, a {
@@ -49,4 +49,8 @@ a:hover {
 
 div {
   font-weight: 500;
+}
+
+button {
+  box-shadow: var(--brand-shadow);
 }
