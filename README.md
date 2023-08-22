@@ -18,25 +18,25 @@ The goal was to create a tech blog site where developers can go to learn and int
 ## Visual Examples
 
 ### Homepage
-![Homepage Visual Example](./public/img/readme-visuals/homepage.png)
+![Homepage Visual Example](./public/assets/images/homepage-visual.png)
 
-### Staff Page
-![Staff Page Visual Example](./public/img/readme-visuals/staff.png)
+### Dashboard
+![Dashboard Visual Example](./public/assets/images/dashboard-visual.png)
 
-### Profile Page
-![Profile Page Visual Example](./public/img/readme-visuals/profile.png)
+### Login Page
+![Login Page Visual Example](./public/assets/images/login-visual.png)
 
-### Booking Page
-![Booking Page Visual Example](./public/img/readme-visuals/booking.png)
+### View Post
+![View Post Visual Example](./public/assets/images/view-visual.png)
 
-### Login/Signup Page
-![Login Visual Example](./public/img/readme-visuals/login.png)
-![Signup Visual Example](./public/img/readme-visuals/signup.png)
+### Write Post
+![Write Post Visual Example](./public/assets/images/write-visual.png)
+
+### Edit Post
+![Edit Post Visual Example](./public/assets/images/edit-visual.png)
 
 ## Deployed Application (Heroku)
 
-[Deployed Application on Heroku](https://safe-paws-da967720d734.herokuapp.com/)
+[Deployed Application on Heroku](https://a-down-tech-blog-b6cbf85bb984.herokuapp.com/)
 
-## Photo Sources
 
-Hero Image, Leaders Images, and Staff Images are from [pexels.com](https://www.pexels.com)
