@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
   const comments = commentData.map((comment) => comment.get({plain: true}))
   console.log(comments)
 
-  res.render('blog-post', {post: blogPost, comments, loggedIn: req.session.loggedIn})
+  res.render('blog-post', {post: blogPost, comments: comments.reverse(), loggedIn: req.session.loggedIn})
 })
 
 
