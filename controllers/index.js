@@ -7,17 +7,20 @@ const { Post, User, Comment } = require('../models')
 
 // API Routes
 router.use('/api', apiRoutes);
+
+// VIEW POST ROUTES
 router.use('/view', viewRoutes)
+
+// WRITE/EDIT POST ROUTES
 router.use('/write', writeRoutes)
 
 
-
-// Dashboard Route
+// DASHBOARD ROUTES
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll( {where: {user_id: req.session.user_id}}, {include: [{model: User}]} )
     const posts = postData.map((project) => project.get({plain: true}))
-    console.log(posts)
+    // console.log(posts)
 
     res.render('dashboard', {posts: posts.reverse(), loggedIn: req.session.loggedIn})
 
@@ -27,10 +30,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-// Login Page Route
+
+// LOGIN ROUTE
 router.get('/login', async (req, res) => res.render('login'))
 
-// Home route
+
+// HOMEPAGE ROUTE
 router.get('/', async (req, res) => {
   try {
     let postData = await Post.findAll( {include: [{model: User}]} )
@@ -43,5 +48,6 @@ router.get('/', async (req, res) => {
     console.log(err)
   }
  });
+
 
 module.exports = router;

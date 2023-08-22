@@ -3,7 +3,8 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../models');
 
 
-// create user and create session
+// CREATE USER
+// CREATE SESSION
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
@@ -20,7 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 
-// login to create session
+// LOGIN TO CREATE SESSION
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { username: req.body.username } });
@@ -44,7 +45,6 @@ router.post('/login', async (req, res) => {
       res.json({ user: userData, message: 'You are now logged in!'})
     })
 
-    // console.log(req.session)
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
 });
 
 
-// logout and destroy session
+// LOGOUT AND DESTROY SESSION
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

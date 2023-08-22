@@ -1,13 +1,4 @@
-header {
-  height: 130px;
-  background-color: var(--brand-soft);
-  box-shadow: var(--brand-shadow);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
+/* STANDARD FLEX BOX SETUP */
 header,
 .header-contents,
 .header-branding,
@@ -23,6 +14,18 @@ main,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/* HEADER */
+header {
+  height: 130px;
+  background-color: var(--brand-soft);
+  box-shadow: var(--brand-shadow);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header-contents {
@@ -55,6 +58,8 @@ nav {
   color: var(--brand-teal-light);
 }
 
+
+/* MAIN */
 main {
   width: 70%;
   margin-left: 15%;
@@ -68,6 +73,8 @@ main {
   width: 100%;
 }
 
+
+/* HOMEPAGE AND DASHBOARD CARDS */
 .card-holder {
   margin-top: 10px;
   margin-bottom: 20px;
@@ -136,6 +143,29 @@ main {
   justify-content: space-evenly;
 }
 
+
+/* DASHBOARD */
+.dashboard-header {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.dashboard-header button {
+  height: 50px;
+  width: 200px;
+}
+
+.dashboard-link {
+  width: 100%;
+}
+
+.dashboard-button {
+  width: 80%;
+  margin: 0 10% 0 10%;
+}
+
+
+/* BUTTONS */
 button {
   background-color: var(--brand-soft);
   font-size: 20px;
@@ -145,6 +175,7 @@ button {
 .dashboard-button {
 height: 60px;
 width: 80%;
+box-shadow: none;
 }
 
 .dashboard-button:hover {
@@ -180,7 +211,8 @@ width: 80%;
   border: 1.5px solid var(--brand-navy)
 }
 
-.modal h3,
+
+/* FORMS */
 form {
   margin-bottom: 20px;
 }
@@ -194,28 +226,10 @@ form {
   width: 48%;
 }
 
-.dashboard-header {
-  width: 100%;
-  justify-content: space-between;
-}
-
-.dashboard-header button {
-  height: 50px;
-  width: 200px;
-}
-
-.dashboard-link {
-  width: 100%;
-}
-
-.dashboard-button {
-  width: 80%;
-  margin: 0 10% 0 10%;
-}
-
 .input {
   border-radius: 0;
 }
+
 
 /* BLOG POST PAGE */
 .blog-post-wrapper {
@@ -234,8 +248,6 @@ form {
   align-items: center;
 }
 
-
-
 .blog-content,
 .comment-div {
   width: 80%;
@@ -251,6 +263,8 @@ form {
   width: 200px;
 }
 
+
+/* WRITE/EDIT BLOG PAGE */
 .write-blog-form {
   width: 100%;
 }
@@ -271,6 +285,7 @@ form {
   margin-top: 30px;
   background-color: rgb(237, 104, 104);
 }
+
 
 @media screen and (max-width: 900px){
   header {

@@ -1,8 +1,4 @@
-const card = $('.card-holder')
-const loginModal = $('#login-modal')
-
-
-// login handler
+// LOGIN HANDLER
 async function login (username, password, alertMsg) {
 
   if (username && password) {
@@ -16,7 +12,7 @@ async function login (username, password, alertMsg) {
       alert(alertMsg)
       window.location.href = '/dashboard'
     } else {
-      console.log(response)
+      // console.log(response)
       alert('Something went wrong. Please try again.')
     }
 
@@ -33,7 +29,7 @@ $('#login-button').on('click', (e) => {
 })
 
 
-// signup handler
+// SIGNUP HANDLER
 async function signup (username, password) {
 
   if (username && password) {
@@ -62,7 +58,7 @@ $('#signup-button').on('click', (e) => {
 })
 
 
-// logout handler
+// LOGOUT HANDLER
 const logout = async () => {
   const response = await fetch('/api/users/logout', {
     method: 'POST',
@@ -83,14 +79,13 @@ $('#logout-link').on('click', (e) => {
 })
 
 
-// post new blog handler
+// POST BLOG HANDLER
 const postBlog = async () => {
   const userId = $('#hidden-user-id').val()
   const postTitle = $('#title-input').val()
   const postContent = $('#body-input').val()
-  console.log(userId, postTitle, postContent)
-  console.log(JSON.stringify({ user_id: userId, title: postTitle, content: postContent }))
-  // { "user_id": userId, "title": postTitle, "content": postContent }
+  // console.log(userId, postTitle, postContent)
+  // console.log(JSON.stringify({ user_id: userId, title: postTitle, content: postContent }))
 
   if (postTitle && postContent) {
     const response = await fetch(`/api/posts/`, {
@@ -103,7 +98,7 @@ const postBlog = async () => {
       alert('Post created')
       window.location.href = '/dashboard'
     } else {
-      console.log(response)
+      // console.log(response)
       alert('Failed to create post')
     }
   
@@ -119,13 +114,13 @@ $('#post-blog-button').on('click', (e) => {
 })
 
 
-// update blog handler
+// UPDATE BLOG HANDLER
 const updateBlog = async () => {
   const postId = $('#hidden-post-id').val()
   const userId = $('#hidden-user-id').val()
   const postTitle = $('#title-input').val()
   const postContent = $('#body-input').val()
-  console.log(postId, postTitle, postContent)
+  // console.log(postId, postTitle, postContent)
 
   if (postTitle && postContent) {
     const response = await fetch(`/api/posts/${postId}`, {
@@ -138,7 +133,7 @@ const updateBlog = async () => {
       alert('Post updated')
       window.location.href = '/dashboard'
     } else {
-      console.log(response)
+      // console.log(response)
       alert('Failed to update post')
     }
   
@@ -154,10 +149,10 @@ $('#update-blog-button').on('click', (e) => {
 })
 
 
-// delete blog handler
+// DELETE BLOG HANDLER
 const deleteBlog = async (postId) => {
   const confirmResponse = confirm('Are you sure you want to delete this post forever?')
-  console.log(confirmResponse)
+  // console.log(confirmResponse)
 
   if (confirmResponse) {
     const response = await fetch(`/api/posts/${postId}`, {
@@ -169,7 +164,7 @@ const deleteBlog = async (postId) => {
       alert('Post deleted')
       window.location.href = '/dashboard'
     } else {
-      console.log(response)
+      // console.log(response)
       alert('Something went wrong. Please try again.')
     }
     
@@ -178,17 +173,17 @@ const deleteBlog = async (postId) => {
   }
 }
 
-
 $('#delete-blog-button').on('click', (e) => {
   e.preventDefault()
   deleteBlog( $('#delete-blog-button').val() )
 })
 
 
+// ADD COMMENT HANDLER
 const addComment = async () => {
   const postId = $('#add-comment-button').val()
   const comment = prompt('Please type your comment.')
-  console.log(comment)
+  // console.log(comment)
   
   const response = await fetch('/api/comments', {
     method: 'POST',
@@ -200,7 +195,7 @@ const addComment = async () => {
     alert('Comment added')
     location.reload()
   } else {
-    console.log(response)
+    // console.log(response)
     alert('Something went wrong. You must be signed in to leave a comment.')
     window.location.href = '/login'
   }

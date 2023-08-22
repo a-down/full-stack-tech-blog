@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 
 
-// get all posts
+// GET ALL POSTS
 router.get('/', async (req, res) => {
   const posts = await Post.findAll().catch((err) => res.status(500).json(err))
   res.status(200).json(posts)
 })
 
 
-// get post by id
+// GET POST BY ID
 router.get('/:id', async (req, res) => {
   try {
     const post = await Post.findByPk(req.params.id).catch((err) => res.status(500).json(err))
@@ -26,10 +26,8 @@ router.get('/:id', async (req, res) => {
 })
 
 
-// POST new blog
+// POST NEW BLOG
 router.post('/', async (req, res) => {
-  console.log(req.body)
-  console.log(req.session.user_id)
   const newPost = await Post.create(req.body)
       .catch((err) => res.status(500).json(err))
 
@@ -37,7 +35,7 @@ router.post('/', async (req, res) => {
 })
 
 
-// PUT by id
+// PUT BY ID
 router.put('/:id', async (req, res) => {
   try {
     const post = await Post.update(req.body, {where: {id: req.params.id}})
@@ -53,7 +51,7 @@ router.put('/:id', async (req, res) => {
 })
 
 
-// DELETE by id
+// DELETE BY ID
 router.delete('/:id', async (req, res) => {
   try {
     const post = await Post.destroy({

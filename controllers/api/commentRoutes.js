@@ -2,12 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 
 
-// get all posts
-router.get('/', async (req, res) => {
-  const posts = await Post.findAll().catch((err) => res.status(500).json(err))
-  res.status(200).json(posts)
-})
-
+// POST NEW COMMENT
 router.post('/', async (req, res) => {
   if (!req.session.loggedIn) {
     res.status(500).json('Please log in to leave a comment.')
@@ -27,8 +22,5 @@ router.post('/', async (req, res) => {
     res.status(500).json(err)
   }
 })
-
-
-
 
 module.exports = router;
