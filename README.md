@@ -15,6 +15,18 @@ The goal was to create a tech blog site where developers can go to learn and int
   - the `log out` link will sign the user out of the site
   - when the user idle on the site (10 minute timeout), then user user will need to sign in to add, update, or delete on the site
 
+## Tech Stack
+    - HTML
+    - CSS
+    - JavaScript
+    - Bulma
+    - Handlebars
+    - jQuery
+    - Express
+    - Node.js
+    - MySQL/Sequelize
+    - Heroku
+
 ## Visual Examples
 
 ### Homepage
