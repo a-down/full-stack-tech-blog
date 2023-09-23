@@ -1,4 +1,4 @@
-# Tech Blog (Module 14 Homework - MVC)
+# Undefined Opinions (Module 14 Homework - MVC)
 
 The goal was to create a tech blog site where developers can go to learn and interact with the community. The requirements were:
   - the user will be presented with the homepage when loading the page, which will display all posts on the tech blog
